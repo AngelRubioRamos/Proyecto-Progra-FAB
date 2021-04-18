@@ -58,6 +58,7 @@ do {
 		}
 	}while (i!=0);
 	
+	printf("EMPECEMOS");
 	
 	
 	
