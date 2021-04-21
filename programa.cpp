@@ -1,12 +1,18 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
-#define N 100
+#define N 1000
+
+struct variables{
+	
+	float dinero=100,pueblo=100,ejercito=100,metal=100,alimentos=100,madera=100;
+	
+};
 
 int main(){
-
-	int i=1;
-	float dinero,pueblo,ejercito,metal,alimentos,madera;	//Hay que colocar los distintos recursos en un vector estructura
+	
+	int i=1;	
+	struct variables variable[N];
 	char nombre[N],nombreimperio[N],respuesta;
 
 //MENU INICIAL
@@ -70,7 +76,7 @@ do {
 	printf("	Procedamos a la creacion de tu imperio. Lo primero que hay que concretar es el nombre. Este es un momneto importante... tomate tu tiempo, porque no lo podras cambiar despues:\n");
 	fflush(stdin);
 	gets(nombreimperio);
-	printf("	Uh! %s? es un buen nombre... Pero necesitas algo mas que eso para conquistar El Contintente!!\n	Sin mas dilacion... EMPECEMOS DE VERDAD\n(presiona ENTER)\n");
+	printf("	Uh! %s? es un buen nombre... Pero necesitas algo mas que eso para conquistar El Contintente!!\n	Sin mas dilacion... EMPECEMOS DE VERDAD\n(presiona ENTER)\n",nombreimperio);
 	getch();
 	
 // EMPEZAMOS CON LA TOMA DE DECISIONES --> ASENTAMIENTO 
@@ -97,14 +103,14 @@ do {
 	printf("Introduce un 1 para asentarte en la COSTA.		Introduce un 2 para asentarte en la CORDILLERA.		Introduce un 3 para asentarte en la MESETA\n");
 	fflush(stdin);
 	scanf("%i",&aux);
-	do { 
+	do {
 		if ((aux==1)||(aux==2)||(aux==3)){
 			asentamiento=aux;
 			i=0;
 		}
 		else {
 			i=1;
-			printf("El caracter introducido no es valido. Introduzca un 1,2,3.\n");
+			printf("El caracter introducido no es valido. Introduzca un 1, un 2, o 3.\n");
 			fflush(stdin);
 			scanf("%c",&respuesta);
 		}
@@ -113,13 +119,25 @@ do {
 	else if(asentamiento==2){printf("	Has elegido sabiamente la CORDILLERA.\n");	}
 	else {printf("	Has elegido sabiamente la MESETA.\n");	}	printf("\n\n");
 
-	printf(		"No te acostumbres a que te digamos todas las consecuencias de tus decisiones. A partir de ahora vas a tener que apañartelas solito.\n");
+	printf(	"	No te acostumbres a que te digamos todas las consecuencias de tus decisiones. A partir de ahora vas a tener que apañartelas solito.\n");
 	
+// EMPEZAMOS  CON EL JUEGO //***********************************************************************************
 	
-return 0;
+	if(asentamiento==1){
+		variable[N].dinero=variable[N].dinero*1.7;
+		printf("Empiezas con %f dinero",variable[N].dinero);
+	}
+		if(asentamiento==2){
+		variable[N].dinero=variable[N].dinero*1.5;
+		printf("Empiezas con %f dinero",variable[N].dinero);
+	}
+	else{
+		variable[N].dinero=variable[N].dinero*1.5;
+		printf("Empiezas con %f dinero",variable[N].dinero);
+	}
+	
+return 0;	
+
 }
-
-
-
 
 
