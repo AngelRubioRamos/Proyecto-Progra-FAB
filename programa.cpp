@@ -7,7 +7,7 @@ int main(){
 
 	int i=1;
 	float dinero,pueblo,ejercito,metal,alimentos,madera;	//Hay que colocar los distintos recursos en un vector estructura
-	char nombre[N],imperio[N],respuesta;
+	char nombre[N],nombreimperio[N],respuesta;
 
 //MENU INICIAL
 
@@ -69,7 +69,7 @@ do {
 	printf("\n");
 	printf("	Procedamos a la creacion de tu imperio. Lo primero que hay que concretar es el nombre. Este es un momneto importante... tomate tu tiempo, porque no lo podras cambiar despues:\n");
 	fflush(stdin);
-	gets(imperio);
+	gets(nombreimperio);
 	printf("	Uh! %s? es un buen nombre... Pero necesitas algo mas que eso para conquistar El Contintente!!\n	Sin mas dilacion... EMPECEMOS DE VERDAD\n(presiona ENTER)\n");
 	getch();
 	
@@ -93,8 +93,27 @@ do {
 			printf("	Este es un asentamiento complicado la verdad... No se ve ningun tipo de defensa natural que ayude ante un posible ataque enemigo. Sin embargo, esta REPLETO de materiales de todo tipo; tenemos madera, tierras para cultivo, animales que domesticar, una red de cuevas mas o menos cercana con metales y otros minerales....\n");
 			printf("	Desde luego que empezar aqui no va a ser facil, pero como sobrevivas al inicio... VAS A SER INDESTRUCTIBLE!!");
 	printf("\n\n");
-	
-	
+	int aux, asentamiento;
+	printf("Introduce un 1 para asentarte en la COSTA.		Introduce un 2 para asentarte en la CORDILLERA.		Introduce un 3 para asentarte en la MESETA\n");
+	fflush(stdin);
+	scanf("%i",&aux);
+	do { 
+		if ((aux==1)||(aux==2)||(aux==3)){
+			asentamiento=aux;
+			i=0;
+		}
+		else {
+			i=1;
+			printf("El caracter introducido no es valido. Introduzca un 1,2,3.\n");
+			fflush(stdin);
+			scanf("%c",&respuesta);
+		}
+	}while (i!=0);
+	if (asentamiento==1){printf("	Has elegido sabiamente la COSTA.\n");	}
+	else if(asentamiento==2){printf("	Has elegido sabiamente la CORDILLERA.\n");	}
+	else {printf("	Has elegido sabiamente la MESETA.\n");	}	printf("\n\n");
+
+	printf(		"No te acostumbres a que te digamos todas las consecuencias de tus decisiones. A partir de ahora vas a tener que apañartelas solito.\n");
 	
 	
 return 0;
